@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <span>Catálogo</span>
+    <router-link to="/">Catálogo</router-link>
   </div>
   <router-view />
 </template>
