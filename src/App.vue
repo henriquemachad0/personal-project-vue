@@ -2,15 +2,21 @@
   <div id="nav">
     <router-link to="/">Início</router-link>
   </div>
+  <router-view />
 </template>
 
 <script>
 
-export default {
-  name: 'App',
-  components: {
+import { mapState } from 'vuex'
 
-  }
+export default {
+  created() {
+    this.$store.dispatch('loadProducts')
+  },
+  computed:
+    mapState([
+      // 'products'
+    ])
 }
 </script>
 
@@ -35,5 +41,10 @@ export default {
   text-align: center;
   background-color: rgb(23, 45, 105);
   color: white;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 </style>
