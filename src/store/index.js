@@ -8,7 +8,8 @@ export default createStore({
     mutations:{
         loadProducts(state, products){
             state.products = products
-        }
+        },
+
     },
     actions:{
         loadProducts({commit}) {
