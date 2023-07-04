@@ -1,9 +1,12 @@
 <template>
    <div class="home">
       <div class="products">
+
          <div v-for="(product, index) in this.products" :key="index" class="product">
             <div class="product-image" :style="{ backgroundImage: 'url(' + product.image + ')' }"></div>
-            <h4>{{ product.title }}</h4>
+            <router-link :to="`${product.id}`">
+               <h4>{{ product.title }}</h4>
+            </router-link>
             <p class="price">R$ {{ product.price.toFixed(2) }}</p>
          </div>
       </div>
@@ -43,6 +46,11 @@ export default {
          padding: 16px;
          margin: 8px;
          height: 320px;
+
+         a {
+            color: #000;
+            text-decoration: none;
+         }
       }
 
       .product-image {
